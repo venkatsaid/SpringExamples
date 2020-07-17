@@ -4,13 +4,17 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 
 @Entity
+@Table
 public class Book {
 
+	@Id
     @Column
     private String isbn;
     @Column
@@ -20,7 +24,7 @@ public class Book {
     @Column
     private String publisher;
     @Column
-    private Date published;
+    private String published;
     @Column
     private double price;
 
@@ -56,11 +60,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Date getPublished() {
+    public String getPublished() {
         return published;
     }
 
-    public void setPublished(Date published) {
+    public void setPublished(String published) {
         this.published = published;
     }
 
